@@ -1,0 +1,22 @@
+# The name of your plugin as displayed in the Plugins Catalog web UI.
+displayName: PermiIO Permissions
+
+# For now, `middleware` is the only type available.
+type: middleware
+
+# The import path of your plugin.
+import: github.com/perreymond/traefik-permitio-permissions
+
+# A brief description of what your plugin is doing.
+summary: "A traefik Plugin for securing the upstream service with https://permit.io."
+
+# Medias associated to the plugin (optional)
+iconPath: .assets/icon.png
+# bannerPath: .assets/banner.png
+
+# Configuration data for your plugin.
+# This is mandatory, and Plugins Catalog will try to execute the plugin with the data you provide as part of its startup validity tests.
+testData:
+  CookieName: AUTH_TOKEN
+  HeaderName: Authorization
+  Secret: super_change_me

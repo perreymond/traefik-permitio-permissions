@@ -1,0 +1,14 @@
+services:
+
+  traefik:
+    image: 'traefik:v3.1.2'
+    ports:
+      - '9080:80/tcp'
+      - '8080:8080/tcp'
+    volumes:
+      - './examples/traefik-config.yml:/etc/traefik/traefik.yml:ro'
+      - './examples/http.yml:/etc/traefik/configs/http.yml:ro'
+      - '.:/plugins-local/src/github.com/perreymond/traefik-permitio-permissions:ro'
+
+  whoami:
+    image: 'traefik/whoami:latest'
